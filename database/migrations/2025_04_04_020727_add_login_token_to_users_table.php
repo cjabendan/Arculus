@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bills', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('login_token')->nullable();
+            $table->timestamp('token_expires_at')->nullable();
         });
     }
 
@@ -23,6 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bills');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn(['login_token', 'token_expires_at']);
+        });
     }
 };
