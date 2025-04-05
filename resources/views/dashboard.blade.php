@@ -26,7 +26,7 @@
             </form>
         </div>
     </header>
-    <main class="dashbaord-content">
+    <main class="dashboard-content">
         <img class="dash-image" alt="Image" src="{{ asset('Images/develop.png') }}"/>
         <h1>Page is under construction.</h1>
     </main>
