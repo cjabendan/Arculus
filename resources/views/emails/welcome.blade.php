@@ -6,26 +6,69 @@
     <title>Welcome to Arculus</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-        p {
-            font-size: 16px;
-            color: black;
-        }
-        h1 {
-            color: black;
-        }
+     body {
+      font-family: Roboto, Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 540px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 40px 30px;
+      border: #202124 1px solid;
+      color: #333;
+    }
+    .logo {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #fbbf24;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 20px;
+      color: #202124;
+      margin-bottom: 24px;
+    }
+    p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #202124;
+      margin-bottom: 16px;
+    }
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: #70757a;
+      margin-top: 30px;
+      border-top: 1px solid #ddd;
+      padding-top: 20px;
+    }
 </style>
 </head>
 <body>
-    <h1>Welcome to Arculus, {{ $user->first_name }}!</h1>
-    <p>Thank you for joining us! We’re thrilled to have you on board.</p>
-    <p>You can log in to your account using the button below:</p>
-    <p>
-        <a href="{{ route('auto-login', ['token' => $user->login_token]) }}"
-           style="display: inline-block; padding: 12px 24px; background-color: #fbbf24; color: #000000; text-decoration: none; border-radius: 5px; font-weight: bold;">
-            My Dashboard
-        </a>
-    </p>
-    <p><strong>Note:</strong> This link is valid for only 2 hours.</p>
-    <p>Best regards,<br>The Arculus Team</p>
+    <div class="container">
+        <div class="logo">Arculus</div>
+
+        <h1>Welcome to Arculus, {{ $user->first_name }}!</h1>
+        <p>Your account has just been successfully created using your email (<strong>{{ $user->email }}</strong>).</p>
+        
+        <p>Arculus is an intelligent platform designed to simplify the process of splitting bills among groups. You may now access your personal dashboard to manage shared expenses, monitor contributions, and ensure transparent financial collaboration.</p>
+        
+        <p>You can log in to your account using the button below:</p>
+        <p>
+            <a href="{{ route('auto-login', ['token' => $user->login_token]) }}"
+               style="display: inline-block; padding: 12px 24px; background-color: #fbbf24; color: #000000; text-decoration: none; border-radius: 5px; font-weight: bold;">
+                My Dashboard
+            </a>
+        </p>
+        <p><strong>Note:</strong> This link is valid for only 2 hours.</p>
+        <p>Best regards,<br>The Arculus Team</p>
 </body>
 </html>

@@ -1,27 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="{{ asset('css/tailwind.css') }}">
-    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet"/>
-    <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-</head>
-<body>
+@extends('layouts.app') 
+@section('title', 'Arculus - Simplify Shared Expenses') 
+@section('head')
+    <link rel="stylesheet" href="{{ asset('css/landing.css') }}"> 
+@endsection 
+@section('content') 
     <main class="register-main">
         <div class="register-content">
             <div class="register-left">
-                <img class="reg-image" alt="Image" src="{{ asset('Images/reg.png') }}"/>
+                <img class="reg-image" alt="Image" src="{{ asset('Images/ai.png') }}"/>
             </div>
             <div class="register-right">
                     <form class="form" action="/register" method="POST">
                         @csrf
-                        <p class="title">Create an account</p>
-                        <p class="message">Join us and start splitting expenses.</p>
+                        <p class="reg-title">Create your account</p>
+                        <p class="message">Join us and start splitting expenses with ease.</p>
                         <div class="flex">
                             <label>
                                 <input name="first_name" placeholder="Firstname" type="text" class="input">
@@ -51,5 +43,4 @@
             </div>
         </div>
     </main>
-</body>
-</html>
+@endsection

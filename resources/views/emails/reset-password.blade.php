@@ -19,11 +19,12 @@
     <p>We received a request to reset the password associated with your account.</p>
     <p>To proceed, please click the link below:</p>
     <p>
-        <a href="{{ route('reset-password', ['token' => $token]) }}"
-           style="display: inline-block; padding: 12px 24px; background-color: #fbbf24; color: #000000; text-decoration: none; border-radius: 5px; font-weight: bold;">
-           Reset Password
-        </a>
+        <a href="{{ url('/reset-password/' . $token) }}"
+        style="display: inline-block; padding: 12px 24px; background-color: #fbbf24; color: #000000; text-decoration: none; border-radius: 5px; font-weight: bold;">
+        Reset Password
+     </a>
     </p>
+    <p><strong>Note:</strong> This link is valid for only 15 minutes.</p>
     <p>If you did not request a password reset, please disregard this message.</p>
 </body>
 </html>

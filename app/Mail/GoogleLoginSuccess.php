@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class WelcomeEmail extends Mailable
+class GoogleLoginSuccess extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -29,7 +29,7 @@ class WelcomeEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Welcome to Arculus!',
+            subject: 'Welcome to Arculus',
         );
     }
 
@@ -39,7 +39,7 @@ class WelcomeEmail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.welcome',
+            view: 'emails.google-login-success',
             with: [
                 'user' => $this->user,
             ],
